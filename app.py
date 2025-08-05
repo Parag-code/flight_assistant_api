@@ -70,6 +70,10 @@ def is_missing(value):
     value = str(value).strip().lower()
     return value in ["", "none", "not provided", "departure city (not provided)", "arrival city (not provided)"]
 
+@app.route("/")
+def home():
+    return "✅ Flight Booking API is running!"
+
 @app.route('/parse', methods=['POST'])
 def parse_query():
     try:
@@ -172,3 +176,4 @@ def parse_query():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
